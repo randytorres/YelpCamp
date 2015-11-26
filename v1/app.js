@@ -8,6 +8,15 @@ app.set("view engine", "ejs");
 var campgrounds = [
         {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
         {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
+        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"},
+        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
+        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
+        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"},
+        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
+        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
+        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"},
+        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
+        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
         {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"}
         ];
 
