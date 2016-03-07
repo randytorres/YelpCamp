@@ -3,32 +3,34 @@ var express    = require("express"),
     bodyParser = require("body-parser"),
     mongoose   = require("mongoose");
 
-mongoose.connect("mongodb:://localhost/yelp_camp");
+mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 // SCHEMA SETUP
-var campgroundsSchema = new Mongoose.Schema({
+var campgroundSchema = new mongoose.Schema({
     name: String,
     image: String
 });
+
 //4:31 of video
+var Campground = mongoose.model("Campground", campgroundSchema);
 
+  Campground.create(
+    {
 
-var campgrounds = [
-        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
-        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
-        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"},
-        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
-        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
-        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"},
-        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
-        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
-        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"},
-        {name: "Salmon Creek", image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"},
-        {name: "Whiteowl",     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTho-MJjrSRxKeH1TlqiBwvCaV7MSRZvYVCVlV6HmPaabxFNDnj"},
-        {name: "Randys Camp",  image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTF-Gyyb4kT5Pz1oIZlnPctqqtGjTiXNCX1IpWZqSiV0XoZ9L6jUw"}
-        ];
+      name : "Salmon Creek",
+      image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjj0VfmU-j0DDIyl7Hgi-F3VnU3_NSCRYPgSjIjPwADixTpmp6Cw"
+
+    }, function(err, campground) {
+         if(err) {
+           console.log(err);
+         } else {
+           console.log("Newly Created Campground")
+           console.log(campground)
+         }
+
+    });
 
 app.get("/", function(req, res){
     res.render("landing");
@@ -36,7 +38,13 @@ app.get("/", function(req, res){
 });
 
 app.get("/campgrounds", function(req, res){
-     res.render("campgrounds", {campgrounds:campgrounds});        
+  Campground.find({}, function(err, allCampgrounds) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.render("campgrounds", {campgrounds:allCampgrounds});
+    }
+  })
 });
 
 app.post("/campgrounds", function(req, res){
@@ -44,16 +52,21 @@ app.post("/campgrounds", function(req, res){
     var name = req.body.name;
     var image = req.body.image;
     var newCampground = {name: name, image: image}
-    campgrounds.push(newCampground);
-    // redirect to campgrounds page
-    res.redirect("/campgrounds");
-});
+    // Crate a new campground andsave to database
+    Campground.create(newCampground, function(err, newlyCreated) {
+      if (err) {
+        console.log(err)
+      } else {
+        res.redirect("/campgrounds");
+      }
+    });
+  });
 
 app.get("/campgrounds/new", function(req, res){
     res.render("new.ejs");
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(3000, process.env.IP, function(){
     console.log("YelpCamp has started");
 });
 
