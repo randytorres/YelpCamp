@@ -31,6 +31,7 @@ function seedDB() {
 	}
 
 	console.log("removed campgrounds");
+	
 	// add a few campgrounds
 	data.forEach(function(seed) {
 	  Campground.create(seed, function(err, campground) {
@@ -38,6 +39,7 @@ function seedDB() {
 		  console.log(err)
 		} else {
 		  console.log("added a campground");
+		  
 		  // create a comment on each campground
 		  Comment.create(
 			{
