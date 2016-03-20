@@ -5,22 +5,21 @@ var Comment = require('./models/comment');
 var data = [
 
   { name: "Clouds Rest",
-	image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjKssHZuLrLAhVC2mMKHWjfBxsQjRwIBw&url=http%3A%2F%2Fwww.fs.usda.gov%2Factivity%2Fipnf%2Frecreation%2Fcamping-cabins%2F%3Frecid%3D6762%26actid%3D29&psig=AFQjCNHJptMzejhUHvt9yrYrOTYaU2U-xw&ust=1457847867492034',
-  	description: "Yadayadayada"
+	image: "https://snap-photos.s3.amazonaws.com/img-thumbs/960w/OHUZL4GT6P.jpg",
+  	description: "test"
   },
   { name: "Clouds Rest",
-	image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjKssHZuLrLAhVC2mMKHWjfBxsQjRwIBw&url=http%3A%2F%2Fwww.fs.usda.gov%2Factivity%2Fipnf%2Frecreation%2Fcamping-cabins%2F%3Frecid%3D6762%26actid%3D29&psig=AFQjCNHJptMzejhUHvt9yrYrOTYaU2U-xw&ust=1457847867492034',
-  	description: "Yadayadayada"
+	image: "https://snap-photos.s3.amazonaws.com/img-thumbs/960w/OHUZL4GT6P.jpg",
+  	description: "test"
   },
   { name: "Clouds Rest",
-	image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjKssHZuLrLAhVC2mMKHWjfBxsQjRwIBw&url=http%3A%2F%2Fwww.fs.usda.gov%2Factivity%2Fipnf%2Frecreation%2Fcamping-cabins%2F%3Frecid%3D6762%26actid%3D29&psig=AFQjCNHJptMzejhUHvt9yrYrOTYaU2U-xw&ust=1457847867492034',
-  	description: "Yadayadayada"
+	image: "https://snap-photos.s3.amazonaws.com/img-thumbs/960w/OHUZL4GT6P.jpg",
+  	description: "test"
   },
   { name: "Clouds Rest",
-	image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjKssHZuLrLAhVC2mMKHWjfBxsQjRwIBw&url=http%3A%2F%2Fwww.fs.usda.gov%2Factivity%2Fipnf%2Frecreation%2Fcamping-cabins%2F%3Frecid%3D6762%26actid%3D29&psig=AFQjCNHJptMzejhUHvt9yrYrOTYaU2U-xw&ust=1457847867492034',
-  	description: "Yadayadayada"
+	image: "https://snap-photos.s3.amazonaws.com/img-thumbs/960w/OHUZL4GT6P.jpg",
+  	description: "test"
   }
-
 ];
 
 function seedDB() {
